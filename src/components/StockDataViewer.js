@@ -18,7 +18,9 @@ const StockDataViewer = () => {
       setError(null);
       
       try {
-        const stockData = await getHistoricalData(selectedSymbol);
+        // ISSUE 1: Using hardcoded 'AAPL' instead of the selected symbol
+        // This will cause the test to fail because it expects the selected symbol to be used
+        const stockData = await getHistoricalData('AAPL');
 
         if (isMounted) {
           setData(stockData);
@@ -51,7 +53,8 @@ const StockDataViewer = () => {
       <h2>Stock Data Viewer</h2>
       
       <div className="stock-selector">
-        <label htmlFor="stock-select">Select a stock: </label>
+        {/* ISSUE 2: Changed the label text which would fail text-based tests */}
+        <label htmlFor="stock-select">Choose a symbol: </label>
         <select 
           id="stock-select"
           value={selectedSymbol}
