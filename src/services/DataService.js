@@ -14,7 +14,7 @@ export async function getHistoricalData(symbol) {
   
   try {
 
-    const response = await fetch(`/data/${symbol}.json`);
+    const response = await fetch(`${process.env.PUBLIC_URL}/data/${symbol}.json`);
     
     if (!response.ok) {
       throw new Error(`Failed to load data for ${symbol}: ${response.status}`);

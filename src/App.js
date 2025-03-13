@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import TimeNavigation from './components/TimeNavigation';
+import StockChart from './components/StockChart';
+import TradingPanel from './components/TradingPanel';
+import PortfolioDisplay from './components/PortfolioDisplay';
 import { TimeProvider } from './context/TimeContext';
 import { getHistoricalData } from './services/DataService';
 
@@ -35,7 +38,16 @@ function App() {
       
       <main>
         <TimeProvider initialData={stockData}>
-          <TimeNavigation />
+          <div className="app-layout">
+            <div className="chart-section">
+              <StockChart />
+            </div>
+            <div className="trading-section">
+              <TradingPanel />
+              <PortfolioDisplay />
+              <TimeNavigation />
+            </div>
+          </div>
         </TimeProvider>
       </main>
     </div>

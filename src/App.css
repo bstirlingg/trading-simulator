@@ -36,3 +36,86 @@
     transform: rotate(360deg);
   }
 }
+.stock-chart {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* In App.css or a separate TradingPanel.css */
+.trading-panel {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.price-display {
+  margin-bottom: 15px;
+}
+
+.trading-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.trading-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.trading-buttons button {
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.trading-buttons button:first-child {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.trading-buttons button:last-child {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.trading-buttons button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-left: 4px solid #2196F3;
+  margin-top: 10px;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .app-layout {
+    flex-direction: row;
+  }
+  
+  .chart-section {
+    flex: 3;
+    margin-right: 15px;
+  }
+  
+  .trading-section {
+    flex: 2;
+  }
+}
