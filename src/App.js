@@ -12,6 +12,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedStock, setSelectedStock] = useState('AAPL');
+
+  //test
   
   useEffect(() => {
     const loadData = async () => {
