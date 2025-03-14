@@ -11,11 +11,13 @@ function App() {
   const [stockData, setStockData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedStock, setSelectedStock] = useState('AAPL');
   
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await getHistoricalData('AAPL');
+        setLoading(true);
+        const data = await getHistoricalData(selectedStock);
         setStockData(data);
         setLoading(false);
       } catch (err) {
@@ -25,15 +27,33 @@ function App() {
     };
     
     loadData();
-  }, []);
+  }, [selectedStock]);
   
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  const handleStockChange = (symbol) => {
+    setSelectedStock(symbol);
+  };
+  
+  if (loading) return <div className="loading-screen">Loading stock data...</div>;
+  if (error) return <div className="error-screen">Error: {error}</div>;
   
   return (
     <div className="App">
       <header className="App-header">
         <h1>Trading Simulation Game</h1>
+        <div className="stock-selector">
+          <label htmlFor="stock-select">Select Stock: </label>
+          <select 
+            id="stock-select"
+            value={selectedStock}
+            onChange={(e) => handleStockChange(e.target.value)}
+          >
+            <option value="AAPL">Apple (AAPL)</option>
+            <option value="MSFT">Microsoft (MSFT)</option>
+            <option value="GOOGL">Google (GOOGL)</option>
+            <option value="NVDA">NVIDIA (NVDA)</option>
+            <option value="META">Meta (META)</option>
+          </select>
+        </div>
       </header>
       
       <main>
@@ -43,13 +63,16 @@ function App() {
               <StockChart />
             </div>
             <div className="trading-section">
-              <TradingPanel />
+              <TradingPanel symbol={selectedStock} />
               <PortfolioDisplay />
               <TimeNavigation />
             </div>
           </div>
         </TimeProvider>
       </main>
+      <footer>
+        <p>Trading Simulator - Created with React</p>
+      </footer>
     </div>
   );
 }
