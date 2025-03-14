@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/trading-simulator/static/css/main.f855e6bc.css",
-    "main.js": "/trading-simulator/static/js/main.7d014271.js",
-    "static/js/453.34225627.chunk.js": "/trading-simulator/static/js/453.34225627.chunk.js",
+    "main.css": "/trading-simulator/static/css/main.26ea415a.css",
+    "main.js": "/trading-simulator/static/js/main.ad7d001a.js",
+    "static/js/453.a9c011f6.chunk.js": "/trading-simulator/static/js/453.a9c011f6.chunk.js",
     "index.html": "/trading-simulator/index.html",
-    "main.f855e6bc.css.map": "/trading-simulator/static/css/main.f855e6bc.css.map",
-    "main.7d014271.js.map": "/trading-simulator/static/js/main.7d014271.js.map",
-    "453.34225627.chunk.js.map": "/trading-simulator/static/js/453.34225627.chunk.js.map"
+    "main.26ea415a.css.map": "/trading-simulator/static/css/main.26ea415a.css.map",
+    "main.ad7d001a.js.map": "/trading-simulator/static/js/main.ad7d001a.js.map",
+    "453.a9c011f6.chunk.js.map": "/trading-simulator/static/js/453.a9c011f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.7d014271.js"
+    "static/css/main.26ea415a.css",
+    "static/js/main.ad7d001a.js"
   ]
 }
